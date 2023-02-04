@@ -1,0 +1,9 @@
+#cardView {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15.75em);
+    align-self: center;
+    gap: 5px 15px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}

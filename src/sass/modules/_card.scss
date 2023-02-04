@@ -1,0 +1,340 @@
+div#card {
+    aspect-ratio: 2/3;
+    width: 15.625em;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: $background;
+    border: 1px solid $font-color;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    font-family: 'VT323', monospace;
+
+    .pokemon {
+        position: relative;
+        height: 14.375em;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        >img {
+            image-rendering: pixelated;
+            aspect-ratio: 1/1;
+            width: 14.375em;
+        }
+
+        .pokedata {
+            max-height: 1em;
+            position: absolute;
+            float: left;
+            top: 0.25em;
+            left: 0.5em;
+
+            >img {
+                aspect-ratio: 1/1;
+                height: 2em;
+                vertical-align: middle;
+                padding-right: 0.5em;
+            }
+
+            >span {
+                padding-right: 0.25em;
+                text-transform: capitalize;
+                font-weight: 600;
+
+                &:last-of-type {
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
+
+
+    /* Buttons */
+    .options {
+        min-width: 14.375em;
+        max-width: 14.5em;
+        height: 2em;
+        margin: 0 auto 0.5em auto;
+
+        button {
+            width: 33%;
+            height: 2em;
+            border: 0;
+            margin: 0;
+            padding: 0 5px 0 5px;
+
+            &:nth-child(1) {
+                border-bottom-left-radius: 2em;
+            }
+
+            &:nth-child(3) {
+                border-bottom-right-radius: 2em;
+            }
+
+            &:hover {
+                filter: brightness(75%)
+            }
+        }
+    }
+
+    #CardSections {
+        min-height: 6.25em;
+        max-height: 6.25em;
+
+        .hidden {
+            display: none;
+        }
+
+
+        /* About section */
+        .about {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            place-items: center;
+
+            .height {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            .height-data {
+                grid-area: 1 / 2 / 2 / 4;
+            }
+
+            .weight {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            .weight-data {
+                grid-area: 2 / 2 / 3 / 4;
+            }
+
+            .types {
+                grid-area: 3 / 1 / 4 / 2;
+            }
+
+            .height,
+            .weight,
+            .types {
+                font-weight: 600;
+                max-height: 1.5em;
+            }
+
+            .type-0 {
+                grid-area: 3 / 2 / 4 / 3;
+            }
+
+            .type-1 {
+                grid-area: 3 / 3 / 4 / 4;
+            }
+
+            .type-0,
+            .type-1 {
+                display: flex;
+
+                img {
+                    height: 1em;
+                    width: auto;
+                    padding: 5px;
+                    border-radius: 1em;
+                }
+            }
+
+            .types {
+                max-height: 1.5em;
+            }
+        }
+
+        /* Stats section */
+        .stats {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2px;
+
+            >div {
+                display: grid;
+                grid-template-columns: 1fr 2fr 0.5fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+                font-size: small;
+                background-color: darken($background, 15%);
+                border-radius: 15px;
+
+                >span {
+                    grid-area: 1 / 1 / 2 / 2;
+                    box-sizing: border-box;
+                    padding-left: 0.4em;
+                }
+
+                >.__bar {
+                    grid-area: 1 / 2 / 2 / 3;
+                    border-radius: 1em;
+                    text-align: end;
+                    padding-right: 0.4em;
+                    position: relative;
+
+                    &.hp {
+                        background-color: #FF5A59;
+                    }
+
+                    &.atk {
+                        background-color: #FFAD76;
+                    }
+
+                    &.def {
+                        background-color: #FFF947;
+                    }
+
+                    &.satk {
+                        background-color: #92B8F7;
+                    }
+
+                    &.sdef {
+                        background-color: #8DDB8A;
+                    }
+
+                    &.spd {
+                        background-color: #FF97B4;
+                    }
+                }
+
+                >.data {
+                    grid-area: 1 / 3 / 2 / 4;
+                }
+            }
+
+        }
+
+        /* Moves section */
+        .moves {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+
+            .move-1,
+            .move-2,
+            .move-3,
+            .move-4 {
+                display: grid;
+                place-items: center;
+                border: 1px solid black;
+                border-radius: 0.5em;
+                cursor: default;
+                user-select: none;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 0.1em;
+
+                text-transform: capitalize;
+
+                &:hover {
+                    background-color: darken($background, 15%);
+                }
+
+                &:active {
+                    background-color: $accent;
+                }
+            }
+
+            .move-1 {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            .move-2 {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            .move-3 {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            .move-4 {
+                grid-area: 2 / 2 / 3 / 3;
+            }
+        }
+    }
+}
+
+
+/* Pokemon Colors */
+.normal {
+    background-color: #A8A77A;
+}
+
+.fire {
+    background-color: #EE8130;
+}
+
+.water {
+    background-color: #6390F0;
+}
+
+.electric {
+    background-color: #F7D02C;
+}
+
+.grass {
+    background-color: #7AC74C;
+}
+
+.ice {
+    background-color: #96D9D6;
+}
+
+.fighting {
+    background-color: #C22E28;
+}
+
+.poison {
+    background-color: #A33EA1;
+}
+
+.ground {
+    background-color: #E2BF65;
+}
+
+.flying,
+.bird {
+    background-color: #A98FF3;
+}
+
+.psychic {
+    background-color: #F95587;
+}
+
+.bug {
+    background-color: #A6B91A;
+}
+
+.rock {
+    background-color: #B6A136;
+}
+
+.ghost {
+    background-color: #735797;
+}
+
+.dragon {
+    background-color: #6F35FC;
+}
+
+.dark {
+    background-color: #705746;
+}
+
+.steel {
+    background-color: #B7B7CE;
+}
+
+.fairy {
+    background-color: #D685AD;
+}

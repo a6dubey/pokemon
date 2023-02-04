@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header>
+        <a to="/pokemon"><img src="https://www.svgrepo.com/show/306584/pokemon.svg" alt="Pokémon" /></a>
+        <ul>
+            <li>
+                <div class="dropdown">
+                    <a to="/pokemon">Pokémon</a>
+                    <div class="dropdown-content">
+                        <a to="/pokemon/card-view">Card View</a>
+                        <a to="/pokemon/table-view">Table View</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a to="/pokemon/test">Test</a>
+            </li>
+            <li>
+                <a to="/pokemon/about">About</a>
+            </li>
+        </ul>
+    </header>
+    <main id="card-container">
+        <div id="card">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="SRC" />
+            <div class="data">
+                <div class="stats hp">HP <span>45</span></div>
+                <div class="stats attack">ATK <span>45</span></div>
+                <div class="stats defense">DEF <span>45</span></div>
+                <div class="stats special-attack">SPATK <span>45</span></div>
+                <div class="stats special-defense">SPDEF <span>45</span></div>
+                <div class="stats speed">SPD <span>45</span></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<!-- <div class="pokecard">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="SRC" />
+    <div class="cardcontainer">
+        <div class="name">
+            <p class="id">{id}</p>
+            <h4 class="pokename">{name.charAt(0).toUpperCase() + name.substring(1)}</h4>
+        </div>
+        <div class="type">
+            {types.map((e) => {
+            return <p class={e}>{e}</p>
+            })}
+        </div>
+    </div>
+</div> -->

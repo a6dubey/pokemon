@@ -1,0 +1,138 @@
+/* Palette */
+:root {
+    --bg: #f2f2f4;
+    --font: #162225;
+    --accent: #d7343b;
+}
+
+/* RESET */
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* HEADER */
+header {
+    background-color: var(--accent);
+}
+header ul {
+    background-color: var(--font);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+header ul li {
+    display: inline;
+    width: fit-content;
+    font-size: 1rem;
+    font-size: clamp(1rem, 1.7928802589rem, 2rem);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition-duration: 0.5s;
+}
+header ul li a {
+    text-decoration: none;
+    color: var(--bg);
+}
+header ul li:hover,
+header ul li .dropdown-content a:hover {
+    background-color: var(--bg);
+    color: var(--font);
+    transition: all 0.5s;
+}
+header ul li:hover > *,
+header ul li .dropdown-content a:hover > *,
+header ul li:hover div.dropdown > *,
+header ul li .dropdown-content a:hover div.dropdown > * {
+    color: inherit;
+    transition: all 0.5s;
+}
+header a > img {
+    position: relative;
+    top: 0;
+    left: 15px;
+    height: 7.5rem;
+    width: 15rem;
+    image-rendering: optimizeSpeed;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+/* COMPONENT: DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--font);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px;
+    z-index: 1;
+    left: -0.5rem;
+}
+.dropdown .dropdown-content a {
+    box-sizing: border-box;
+    padding: 5px;
+}
+.dropdown:hover .dropdown-content, .dropdown:hover a {
+    display: block;
+}
+
+/* CONTENT */
+
+main#card {
+    display: flex;
+    flex-flow: row wrap;
+} 
+
+.card-container > * {
+    padding: 10px;
+}
+
+/* COMPONENT: CARD */
+
+div#card {
+    aspect-ratio: 2/3;
+    width: 250px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #6390F0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#card img {
+    image-rendering: pixelated;
+    aspect-ratio: 1/1;
+    width: 230px;
+    border-bottom: 2px solid black;
+}
+
+div.data {
+    display: grid;
+    grid-template-columns: 0.5fr repeat(2, 1fr) 0.5fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items:center;
+}
+    
+.hp { grid-area: 2 / 2 / 3 / 3; }
+.attack { grid-area: 3 / 2 / 4 / 3; }
+.defense { grid-area: 4 / 2 / 5 / 3; }
+.special-attack { grid-area: 2 / 3 / 3 / 4; }
+.special-defense { grid-area: 3 / 3 / 4 / 4; }
+.speed { grid-area: 4 / 3 / 5 / 4; }

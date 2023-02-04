@@ -1,0 +1,46 @@
+{
+    "name": "pokemon",
+    "version": "1.0.0",
+    "description": "[Click Here to open a preview](https://ayosafacundo.github.io/pokemon)",
+    "main": "index.js",
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ayosafacundo/pokemon.git"
+    },
+    "author": "Ayosa Facundo Ezequiel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ayosafacundo/pokemon/issues"
+    },
+    "homepage": "https://ayosafacundo.github.io/pokemon",
+    "dependencies": {
+        "axios": "^1.2.0",
+        "react": "^18.2.0",
+        "react-router-dom": "^6.4.3"
+    },
+    "devDependencies": {
+        "gh-pages": "^4.0.0",
+        "react-scripts": "^5.0.1",
+        "sass": "^1.57.1"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

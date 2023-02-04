@@ -1,0 +1,51 @@
+header {
+    background-color: $accent;
+
+    ul {
+        background-color: $font-color;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            width: fit-content;
+            font-size: 1rem;
+            font-size: clamp(1rem, 0.7572815533980582rem + 1.035598705501618vw, 2rem);
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            transition-duration: 0.5s;
+
+            a {
+                text-decoration: none;
+                color: $background;
+            }
+
+            &:hover,
+            .dropdown-content a:hover {
+                background-color: $background;
+                color: $font-color;
+                transition: all 0.5s;
+
+                &>*,
+                div.dropdown>* {
+                    color: inherit;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+
+    a>img {
+        position: relative;
+        aspect-ratio: 2/1;
+        top: 0;
+        left: 15px;
+        height: 7.5rem;
+        width: 15rem;
+        image-rendering: optimizeSpeed;
+        object-fit: cover;
+        padding: 0;
+        margin: 0;
+    }
+}
